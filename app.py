@@ -11,7 +11,7 @@ def main() :
 
     st.set_page_config(layout="wide")
 
-    st.title('고객 차량 구매 가능금액 예측 및 추천 앱')
+    
 
     menu = ['Home', 'EDA', 'ML']
     choice = st.sidebar.selectbox('메뉴 선택', menu)
