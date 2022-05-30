@@ -15,3 +15,8 @@ def run_home() :
 
 
     
+    choice = st.sidebar.selectbox('메뉴 선택', df['제조사명'].unique())
+
+    if choice == df['제조사명'].unique() :
+        st.dataframe(df)
+    

@@ -34,13 +34,17 @@ def run_eda() :
         st.title('차량 데이터 EDA')
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
         
+    
+                
         radio_menu = ['전체 데이터', '통계치']
-        selected = st.radio('선택', radio_menu)
+        selected = st.radio('선택', radio_menu,)
 
         if selected == radio_menu[0] :
             st.dataframe(df)
         elif selected == radio_menu[1] :
             st.dataframe(df.describe())
+        
+        
 
         st.title('')
         st.subheader('최대 최소값 분석')
