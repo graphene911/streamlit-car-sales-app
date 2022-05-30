@@ -20,39 +20,89 @@ else:
 
 
 def run_eda() :
+      
+    eda_list = st.sidebar.radio('성별 입력', ['차량 데이터','고객 데이터'])
+        
+    if eda_list == '차량 데이터':
+        st.title('차량 데이터 EDA')
+        df = pd.read_csv('data/car_price_sales.csv', index_col=0)
+        
+        radio_menu = ['전체 데이터', '통계치']
+        selected = st.radio('선택', radio_menu)
 
-    st.title('재고차량 데이터 EDA')
-    
-    df = pd.read_csv('data/car_price_sales.csv', index_col=0)
-    
-    radio_menu = ['전체 데이터', '통계치']
-    selected = st.radio('선택', radio_menu)
+        if selected == radio_menu[0] :
+            st.dataframe(df)
+        elif selected == radio_menu[1] :
+            st.dataframe(df.describe())
 
-    if selected == radio_menu[0] :
-        st.dataframe(df)
-    elif selected == radio_menu[1] :
-        st.dataframe(df.describe())
+        st.title('')
+        st.subheader('최대 최소값 분석')
+        col_list = df.columns[4 : ]
+        selected_col = st.selectbox('최대 최소 원하는 컬럼 선택', col_list)
 
-    st.title('')
-    st.subheader('최대 최소값 분석')
-    col_list = df.columns[4 : ]
-    selected_col = st.selectbox('최대 최소 원하는 컬럼 선택', col_list)
+        df_max = df.loc[df[selected_col] == df[selected_col].max(),]
+        df_min = df.loc[df[selected_col] == df[selected_col].min(),]
+        
+        st.text('{}컬럼의 최대값에 해당하는 데이터 입니다.'.format(selected_col))
+        st.dataframe(df_max)
+        st.text('{}컬럼의 최소값에 해당하는 데이터 입니다.'.format(selected_col))
+        st.dataframe(df_min)
+        
+        st.title('')
+        st.subheader('상관계수분석')
 
-    df_max = df.loc[df[selected_col] == df[selected_col].max(),]
-    df_min = df.loc[df[selected_col] == df[selected_col].min(),]
+        selected_list = st.multiselect('컬럼들 선택', col_list)
+        if len(selected_list) > 1 :
+            fig1 = sb.pairplot(data=df[selected_list])
+            st.pyplot(fig1)
+        
+        st.text('선택하신 컬럼끼리의 상관계수입니다.')
+        st.dataframe(df[selected_list].corr())
     
-    st.text('{}컬럼의 최대값에 해당하는 데이터 입니다.'.format(selected_col))
-    st.dataframe(df_max)
-    st.text('{}컬럼의 최소값에 해당하는 데이터 입니다.'.format(selected_col))
-    st.dataframe(df_min)
-    
-    st.title('')
-    st.subheader('상관계수분석')
 
-    selected_list = st.multiselect('컬럼들 선택', col_list)
-    if len(selected_list) > 1 :
-        fig1 = sb.pairplot(data=df[selected_list])
-        st.pyplot(fig1)
-    
-    st.text('선택하신 컬럼끼리의 상관계수입니다.')
-    st.dataframe(df[selected_list].corr())
+    elif eda_list == '고객 데이터':
+        st.title('고객 데이터 EDA')
+
+        df1 = pd.read_csv('data/Car_Purchasing_Data.csv' ,encoding='ISO-8859-1' )
+
+        # 라디오 버튼을 이용해서, 데이터 프레임과, 통계치를 선택해서 보여줄 수 있도록 만든다.
+
+        radio_menu = ['전체 데이터', '통계치']
+        selected = st.radio('선택하세요', radio_menu)
+
+        if selected == radio_menu[0] :
+            st.dataframe(df1)
+        elif selected == radio_menu[1] :
+            st.dataframe(df1.describe())
+
+
+
+        ## 컬럼명을 보여주고, 컬럼을 선택하면,
+        ## 해당 컬럼의 최대값 데이터와, 최소값 데이터를 보여준다.
+
+
+        col_list = df1.columns[4 : ]
+        selected_col = st.selectbox('최대 최소 원하는 컬럼 선택', col_list)
+
+        df1_max = df1.loc[df1[selected_col] == df1[selected_col].max(),]
+        df1_min = df1.loc[df1[selected_col] == df1[selected_col].min(),]
+        
+        st.text('{}컬럼의 최대값에 해당하는 데이터 입니다.'.format(selected_col))
+        st.dataframe(df1_max)
+        st.text('{}컬럼의 최소값에 해당하는 데이터 입니다.'.format(selected_col))
+        st.dataframe(df1_min)
+
+
+        ## 유저가 선택한 컬럼들만, pairplot 그리고
+        # 그 아래 상관계수를 보여준다.
+
+        selected_list = st.multiselect('컬럼들 선택', col_list)
+
+        # print(selected_list)
+
+        if len(selected_list) > 1 :
+            fig1 = sb.pairplot(data=df1[selected_list])
+            st.pyplot(fig1)
+
+        st.text('선택하신 컬럼끼리의 상관계수입니다.')
+        st.dataframe(df1[selected_list].corr())
