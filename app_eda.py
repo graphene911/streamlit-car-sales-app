@@ -4,8 +4,13 @@ import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as plt
 import platform
+import matplotlib.font_manager as fm
 
-# 차트 한글 깨짐 방지 코드
+
+
+############### 그래프에서 한국어 인식 ###############
+import platform
+
 from matplotlib import font_manager, rc
 plt.rcParams['axes.unicode_minus'] = False
 
@@ -15,8 +20,10 @@ elif platform.system() == 'Windows':
     path = "c:/Windows/Fonts/malgun.ttf"
     font_name = font_manager.FontProperties(fname=path).get_name()
     rc('font', family=font_name)
+elif platform.system() == 'Linux':
+    rc('font', family='NanumGothic')    
 else:
-    print('Unknown system... sorry~~~~')
+    print('Unknown system')
 
 
 def run_eda() :
@@ -101,8 +108,13 @@ def run_eda() :
         # print(selected_list)
 
         if len(selected_list) > 1 :
-            fig1 = sb.pairplot(data=df1[selected_list])
+            path = '/usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf' 
+            fontprop = fm.FontProperties(fname=path, size=18)
+
+            fig1 = sb.pairplot(data=df1[selected_list], fontproperties=fontprop)
             st.pyplot(fig1)
 
         st.text('선택하신 컬럼끼리의 상관계수입니다.')
         st.dataframe(df1[selected_list].corr())
+
+    
