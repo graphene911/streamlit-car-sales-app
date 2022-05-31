@@ -14,7 +14,7 @@ def main() :
 
     
 
-    menu = ['Home', 'EDA', 'ML', 'UPLOAD']
+    menu = ['차량 검색', 'EDA', '구매금액 예측', 'UPLOAD']
     choice = st.sidebar.selectbox('메뉴 선택', menu)
 
     if choice == menu[0] :

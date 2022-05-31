@@ -13,7 +13,7 @@ def run_ml() :
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
 
     word = st.text_input('검색할 모델명을 입력하세요')
-    result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),]
+    result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),].sort_values('제조사명')
     st.dataframe(result)
 
     st.subheader('고객 차량 구매금액 예측')
@@ -35,7 +35,7 @@ def run_ml() :
     debt= st.sidebar. number_input('카드빚 입력',0)
     worth= st.sidebar. number_input('자산 입력',0)
 
-    if st.button('자동차 구매 금액 예측') : 
+    if st.checkbox('자동차 구매 금액 예측') : 
 
         # 1. 신규 고객의 정보를 넘파이 어레이로 만들어준다.
         new_data = np.array([gender,age,salary,debt,worth])
@@ -56,7 +56,7 @@ def run_ml() :
         
         st.write('구매 가능 금액은 '  + str(y_pred) + '원 입니다.')
         st.subheader('구매 가능한 차량 입니다.')
-        st.dataframe( df.loc[df['가격(\)'] <= y_pred ] )
+        st.dataframe(df.loc[df['가격(\)'] < y_pred ].sort_values('가격(\)', ascending=False) )
 
         
 
