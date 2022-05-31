@@ -57,3 +57,7 @@ def run_ml() :
         st.write('구매 가능 금액은 '  + str(y_pred) + '원 입니다.')
         st.subheader('구매 가능한 차량 입니다.')
         st.dataframe( df.loc[df['가격(\)'] <= y_pred ] )
+
+        
+
+
