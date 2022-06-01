@@ -6,8 +6,8 @@ from PIL import Image
 
 def run_serch() :
 
-    img = Image.open('data\img2.jpg')
-    st.sidebar.image(img, width=297)
+    img2 = Image.open('data\img2.jpg')
+    st.sidebar.image(img2, width=297)
 
     st.title('차량 검색')
 

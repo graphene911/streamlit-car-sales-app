@@ -20,8 +20,8 @@ def save_uploaded_file(directory, file) :
 def run_upload() :
     st.title('여러 파일 한번에 업로드하는 앱')
     
-    img = Image.open('data\img6.jpg')
-    st.sidebar.image(img, width=297)
+    img5 = Image.open('data\img6.jpg')
+    st.sidebar.image(img5, width=297)
 
     # 사이드바 메뉴
     menu = ['차량등록', '파일등록']
