@@ -13,7 +13,7 @@ def run_ml() :
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
 
     word = st.text_input('검색할 모델명을 입력하세요')
-    result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),].sort_values('제조사명')
+    result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),].sort_values(['제조사명','타입','가격(\)'])
     st.dataframe(result)
 
     st.subheader('고객 차량 구매금액 예측')
@@ -53,11 +53,10 @@ def run_ml() :
 
         y_pred = round(y_pred[0,0])
         
-        
+        st.sidebar.write('구매 가능 금액은 '  + str(y_pred) + '원 입니다.')
         st.write('구매 가능 금액은 '  + str(y_pred) + '원 입니다.')
         st.subheader('구매 가능한 차량 입니다.')
-        st.dataframe(df.loc[df['가격(\)'] < y_pred ].sort_values('가격(\)', ascending=False) )
+        suc_df = st.dataframe(df.loc[df['가격(\)'] < y_pred ].sort_values(['제조사명','타입','가격(\)'], ascending=False))
 
-        
 
 
