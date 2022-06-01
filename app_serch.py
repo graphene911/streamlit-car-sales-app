@@ -6,12 +6,12 @@ from PIL import Image
 
 def run_serch() :
 
-    img2 = Image.open('data\img2.jpg')
+    img2 = Image.open('data/img2.jpg')
     st.sidebar.image(img2, width=297)
 
     st.title('차량 검색')
 
-    img = Image.open('data\img5.jpg')
+    img = Image.open('data/img5.jpg')
     st.image(img, width=1420)
 
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)

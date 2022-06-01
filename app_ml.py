@@ -8,7 +8,7 @@ from PIL import Image
 
 def run_ml() :
 
-    img4 = Image.open('data\img1.jpg')
+    img4 = Image.open('data/img1.jpg')
     st.sidebar.image(img4, width=297)
 
     st.title('고객 정보 입력을 통한 차량 구매가능 금액 예측 및 추천')

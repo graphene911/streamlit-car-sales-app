@@ -30,7 +30,7 @@ else:
 def run_eda() :
     
 
-    img3 = Image.open('data\img3.jpg')
+    img3 = Image.open('data/img3.jpg')
     st.sidebar.image(img3, width=297)
 
     eda_list = st.sidebar.radio('성별 입력', ['차량 데이터','고객 데이터'])
