@@ -5,6 +5,7 @@ import seaborn as sb
 import matplotlib.pyplot as plt
 import platform
 import matplotlib.font_manager as fm
+from PIL import Image
 
 
 
@@ -27,7 +28,11 @@ else:
 
 
 def run_eda() :
-      
+    
+
+    img = Image.open('data\img3.jpg')
+    st.sidebar.image(img, width=297)
+
     eda_list = st.sidebar.radio('성별 입력', ['차량 데이터','고객 데이터'])
         
     if eda_list == '차량 데이터':

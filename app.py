@@ -12,6 +12,8 @@ from PIL import Image
 def main() :
 
     st.set_page_config(layout="wide")
+    
+    
 
     menu = ['HOME', '차량 검색', 'EDA', '구매금액 예측', 'UPLOAD']
     choice = st.sidebar.selectbox('메뉴 선택', menu)

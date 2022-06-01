@@ -4,9 +4,13 @@ import joblib
 import numpy as np
 import sklearn
 from sklearn.linear_model import LinearRegression
-
+from PIL import Image
 
 def run_ml() :
+
+    img = Image.open('data\img1.jpg')
+    st.sidebar.image(img, width=297)
+
     st.title('고객 정보 입력을 통한 차량 구매가능 금액 예측 및 추천')
 
     st.subheader('차량 검색')

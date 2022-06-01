@@ -1,15 +1,19 @@
 from operator import contains
 import streamlit as st
 import pandas as pd
-import joblib
-import numpy as np
-import sklearn
-from sklearn.linear_model import LinearRegression
+from PIL import Image
+
 
 def run_serch() :
-    st.title('고객 정보 입력을 통한 차량 구매가능 금액 예측 및 추천 앱 입니다.')
 
-    st.subheader('차량 검색')
+    img = Image.open('data\img2.jpg')
+    st.sidebar.image(img, width=297)
+
+    st.title('차량 검색')
+
+    img = Image.open('data\img5.jpg')
+    st.image(img, width=1420)
+
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
 
 
