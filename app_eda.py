@@ -39,7 +39,6 @@ def run_eda() :
         st.title('차량 데이터 EDA')
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
         df = df.iloc[:,:-1]
-        
     
                 
         radio_menu = ['전체 데이터', '통계치']

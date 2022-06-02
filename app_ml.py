@@ -15,10 +15,11 @@ def run_ml() :
 
     st.subheader('차량 검색')
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
-
+    
     word = st.text_input('검색할 모델명을 입력하세요')
     result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),].sort_values(['제조사명','타입','가격(\)'])
     result = result.iloc[:,:-1]
+    
     st.dataframe(result)
 
     st.subheader('고객 차량 구매금액 예측')

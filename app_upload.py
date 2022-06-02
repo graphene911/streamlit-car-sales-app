@@ -46,18 +46,12 @@ def run_upload() :
         cc_text = st.number_input('배기량')
         car_type = ['hatchback', 'minivan', 'universal', 'sedan', 'van', 'suv', 'pickup', 'liftback', 'minibus', 'coupe', 'cabriolet', 'limousine']
         type_text = st.selectbox('차량 타입', car_type)
-        
-        wa_text = st.radio('보증기간 유/무', ['true','false'])
-        if wa_text == 'false' :
-            wa_text = 'false'
-        else :
-            wa_text = 'true'
         fr_type = ['front', 'rear', 'all']
         fr_text = st.selectbox('구동방식', fr_type)
         price_text = st.number_input('가격')
 
         new_car = [{'제조사명' : brand_text , '모델' : model_text, '변속기유형' : trans_text, '색상' : color_text, '주행거리(km)' : km_text,
-        '연식' : year_text, '연료' : oil_text, '배기량' : cc_text, '타입' : type_text, '보증기간' : wa_text , '구동' : fr_text, '가격(\) ' : price_text}]
+        '연식' : year_text, '연료' : oil_text, '배기량' : cc_text, '타입' : type_text, '구동' : fr_text, '가격(\) ' : price_text}]
         new_car_df = pd.DataFrame(data = new_car)
 
         
