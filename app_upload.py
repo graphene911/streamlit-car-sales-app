@@ -32,10 +32,7 @@ def run_upload() :
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
         st.title('입고 차량 등록')
 
-        brand_type = ['Ford', 'Dodge', 'Mazda', 'Audi', 'Volkswagen', 'Opel', 'Volvo', 'Peugeot', 'Renault', 'Honda', 'Toyota', 'Mercedes-Benz',
-        'Citroen', 'Hyundai', 'ВАЗ', 'Skoda', 'BMW', 'Kia', 'Fiat', 'Chrysler', 'Mitsubishi', 'Rover', 'Chevrolet', 'Nissan', 'Lifan','LADA',
-        'Jaguar', 'УАЗ', 'Seat', 'Buick', 'Land Rover', 'Porsche', 'Suzuki', 'Alfa Romeo', 'Daewoo', 'Mini', 'Subaru', 'Lexus','Saab', 'ГАЗ',
-        'Lancia', 'Pontiac', 'Geely', 'Acura', 'Jeep', 'Chery', 'Infiniti', 'SsangYong', 'Dacia', 'ЗАЗ', 'Great Wall','Lincoln', 'Cadillac', 'Iveco', 'Москвич']
+        brand_type = sorted(list(df['제조사명'].unique()))
         brand_text = st.selectbox('제조사', brand_type)
         model_text = st.text_input('모델')
         trans_type = ['mechanical', 'automatic']
