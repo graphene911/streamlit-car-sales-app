@@ -12,6 +12,7 @@ def run_serch() :
     st.title('차량 검색')
 
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
+    df = df.iloc[:,:-1]
 
     df1 = sorted(list(df['제조사명'].unique()))
     choice = st.sidebar.selectbox('브랜드 선택', df1)

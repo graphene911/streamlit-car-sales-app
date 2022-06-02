@@ -31,7 +31,8 @@ def run_upload() :
     if choice == menu[0]:
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
         st.title('입고 차량 등록')
-
+        
+            
         brand_type = sorted(list(df['제조사명'].unique()))
         brand_text = st.selectbox('제조사', brand_type)
         model_text = st.text_input('모델')
@@ -45,11 +46,12 @@ def run_upload() :
         cc_text = st.number_input('배기량')
         car_type = ['hatchback', 'minivan', 'universal', 'sedan', 'van', 'suv', 'pickup', 'liftback', 'minibus', 'coupe', 'cabriolet', 'limousine']
         type_text = st.selectbox('차량 타입', car_type)
-        wa_text = st.radio('보증기간 유/무', ['True','False'])
-        if wa_text == 'False' :
-            wa_text == 0
-        else:
-            wa_text == 1
+        
+        wa_text = st.radio('보증기간 유/무', ['true','false'])
+        if wa_text == 'false' :
+            wa_text = 'false'
+        else :
+            wa_text = 'true'
         fr_type = ['front', 'rear', 'all']
         fr_text = st.selectbox('구동방식', fr_type)
         price_text = st.number_input('가격')
@@ -68,7 +70,7 @@ def run_upload() :
             
         
         del_df = st.number_input('취소하실 데이터의 번호를 입력하세요', 0, 10000000000)
-        if st.button('취소') :
+        if st.button('등록 취소') :
             df= df.drop(index=del_df).sort_index(ascending=False)
             df.to_csv('data/car_price_sales.csv')
         
