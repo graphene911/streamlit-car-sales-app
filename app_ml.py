@@ -11,13 +11,14 @@ def run_ml() :
     img4 = Image.open('data/img1.jpg')
     st.sidebar.image(img4, width=297)
 
-    st.title('고객 정보 입력을 통한 차량 구매가능 금액 예측 및 추천')
+    st.title('고객정보 입력으로 차량 구매가능 금액 예측 및 추천')
 
     st.subheader('차량 검색')
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
 
     word = st.text_input('검색할 모델명을 입력하세요')
     result = df.loc[ df['모델'].str.lower().str.contains(word.lower()),].sort_values(['제조사명','타입','가격(\)'])
+    result = result.iloc[:,:-1]
     st.dataframe(result)
 
     st.subheader('고객 차량 구매금액 예측')

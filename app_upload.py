@@ -18,7 +18,6 @@ def save_uploaded_file(directory, file) :
     return st.success("Saved file : {} in {}".format(file.name, directory))
 
 def run_upload() :
-    st.title('여러 파일 한번에 업로드하는 앱')
     
     img5 = Image.open('data/img6.jpg')
     st.sidebar.image(img5, width=297)
@@ -31,6 +30,7 @@ def run_upload() :
 
     if choice == menu[0]:
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
+        st.title('입고 차량 등록')
 
         brand_type = ['Ford', 'Dodge', 'Mazda', 'Audi', 'Volkswagen', 'Opel', 'Volvo', 'Peugeot', 'Renault', 'Honda', 'Toyota', 'Mercedes-Benz',
         'Citroen', 'Hyundai', 'ВАЗ', 'Skoda', 'BMW', 'Kia', 'Fiat', 'Chrysler', 'Mitsubishi', 'Rover', 'Chevrolet', 'Nissan', 'Lifan','LADA',
@@ -41,8 +41,8 @@ def run_upload() :
         trans_type = ['mechanical', 'automatic']
         trans_text = st.selectbox('변속기 유형', trans_type)
         color_text = st.text_input('색상')
-        km_text = st.number_input('주행거리(km)')
-        year_text = st.number_input('연식')
+        km_text = st.number_input('주행거리(km)', 0, 1000000)
+        year_text = st.number_input('연식',0,6000)
         oil_type = ['gasoline', 'diesel', 'gas', 'hybrid-petrol', 'electric', 'hybrid-diesel']
         oil_text = st.selectbox('연료',oil_type)
         cc_text = st.number_input('배기량')
@@ -50,7 +50,7 @@ def run_upload() :
         type_text = st.selectbox('차량 타입', car_type)
         wa_text = st.radio('보증기간 유/무', ['True','False'])
         if wa_text == 'False' :
-            wa_text = 0 
+            wa_text = 0
         else :
             wa_text = 1
         fr_type = ['front', 'rear', 'all']
@@ -62,14 +62,24 @@ def run_upload() :
         new_car_df = pd.DataFrame(data = new_car)
 
         
-        
-        if st.button('차량 등록') :
-            df = df.append(new_car_df,ignore_index=True)
-            st.dataframe(df.sort_index(ascending=False))
 
+        if st.button('차량 등록') :
+            df = df.append(new_car_df, ignore_index=True)
+            df.to_csv('data/car_price_sales.csv')
+        
+        
+            
+        
+        del_df = st.number_input('취소하실 데이터의 번호를 입력하세요', 0, 10000000000)
+        if st.button('취소') :
+            df= df.drop(index=del_df).sort_index(ascending=False)
+            df.to_csv('data/car_price_sales.csv')
+        
+        st.dataframe(df.iloc[:,:-1].sort_index(ascending=False))
+        
     elif choice == menu[1] :
                 
-        upload_files = st.file_uploader('이미지 파일을 선택', type=['jpg', 'png', 'jpeg','csv'], accept_multiple_files=True)
+        upload_files = st.file_uploader('파일을 선택', type=['jpg', 'png', 'jpeg','csv'], accept_multiple_files=True)
     
         # upload_files는 여러파일들을 저장하고 있는 리스트
         # 업로드한 파일이 있는 경우에만, 아래 코드를 실행해야 한다.

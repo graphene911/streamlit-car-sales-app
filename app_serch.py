@@ -12,7 +12,7 @@ def run_serch() :
     st.title('차량 검색')
 
     img = Image.open('data/img5.jpg')
-    st.image(img, width=1420)
+    st.image(img, width=1035)
 
     df = pd.read_csv('data/car_price_sales.csv', index_col=0)
 
