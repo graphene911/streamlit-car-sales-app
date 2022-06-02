@@ -50,9 +50,9 @@ def run_upload() :
         type_text = st.selectbox('차량 타입', car_type)
         wa_text = st.radio('보증기간 유/무', ['True','False'])
         if wa_text == 'False' :
-            wa_text = 0
-        else :
-            wa_text = 1
+            wa_text == 0
+        else:
+            wa_text == 1
         fr_type = ['front', 'rear', 'all']
         fr_text = st.selectbox('구동방식', fr_type)
         price_text = st.number_input('가격')
