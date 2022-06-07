@@ -1,5 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=Slice&color=0:fc00ff,100:00dbde&height=150&section=header&text=The%20Purchase%20of%20a%20Used%20Car%20APP&fontSize=50&&fontColor=ffff&animation=fadeIn) 
-
+<img src=https://user-images.githubusercontent.com/105832364/172322883-7d1d1120-8cac-409d-9d49-873df0cdc166.jpg width="855" height="400"/>
   - 개요
     - 중고차 판매자가 고객의 구매 가능 금액 예측을 통해 고객에게 알맞는 중고차를 추천 할 수 있으며,<br/>
      차량의 입 출고 관리를 통해 판매자가 소유한 차량의 재고를 관리 할 수 있다.
@@ -38,7 +38,7 @@
     - Net Worth
     - Car Purchase Amount
 
-## 구매금액 예측(ML)
+## Machine Learning (data = 고객데이터 )
   - NaN 제거
   - 학습을 위해 X , y지정
   - 피처스케일링(scikit-learn MinMaxScaler 사용)
