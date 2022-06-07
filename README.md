@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=Slice&color=0:fc00ff,100:00dbde&height=150&section=header&text=The%20Purchase%20of%20a%20Used%20Car%20APP&fontSize=50&&fontColor=ffff&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=Waving&color=0:fc00ff,100:00dbde&height=220&section=header&text=The%20Purchase%20of%20a%20Used%20Car%20APP&fontSize=50&&fontColor=ffff&animation=fadeIn)
 <br/>
 ### GRAPHENE911 :gem: <br/><br/>
 [![GitHub Badge](https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white)](https://github.com/graphene911/)
