@@ -28,7 +28,7 @@
 <img src=https://user-images.githubusercontent.com/105832364/172322883-7d1d1120-8cac-409d-9d49-873df0cdc166.jpg width="855" height="400"/><br/>
   - 개요
     - 중고차 판매자가 고객의 구매 가능 금액 예측을 통해 고객에게 알맞는 중고차를 추천 할 수 있으며,<br/>
-     차량의 입 출고 관리를 통해 판매자가 소유한 차량의 재고를 관리 할 수 있다.
+     차량의 입 출고 관리를 통해 판매자가 소유한 차량의 재고를 관리 할 수 있습니다.
   
   - MENU
     - HOME
@@ -71,7 +71,7 @@
   - 피처스케일링(scikit-learn MinMaxScaler 사용)
   - 학습을 위해, y 의 shape 을 변경 후 피처스케일링(scikit-learn MinMaxScaler 사용)
   - 트레이닝셋과 테스트셋으로 분리 (from sklearn.model_selection import train_test_split)
-  - 리니어 리그레션으로 모델링하고 학습한 후, 평가
+  - 리니어 리그레션으로 모델링하고 학습한 후 평가
 <br/>
 
 ## URL
