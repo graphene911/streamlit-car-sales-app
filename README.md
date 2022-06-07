@@ -25,7 +25,7 @@
 ![Visual Studio Code Badge](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=flat&logo=Visual%20Studio%20Code&logoColor=white)
 ![Amazon AWS Badge](https://img.shields.io/badge/Amazon%20AWS-232F3E?style=flat&logo=Amazon%20AWS&logoColor=white)
 
-<img src=https://user-images.githubusercontent.com/105832364/172322883-7d1d1120-8cac-409d-9d49-873df0cdc166.jpg width="855" height="400"/><>
+<img src=https://user-images.githubusercontent.com/105832364/172322883-7d1d1120-8cac-409d-9d49-873df0cdc166.jpg width="855" height="400"/><br/>
   - 개요
     - 중고차 판매자가 고객의 구매 가능 금액 예측을 통해 고객에게 알맞는 중고차를 추천 할 수 있으며,<br/>
      차량의 입 출고 관리를 통해 판매자가 소유한 차량의 재고를 관리 할 수 있다.
