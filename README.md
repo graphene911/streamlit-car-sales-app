@@ -39,6 +39,7 @@
     - Car Purchase Amount
 
 ## Machine Learning (data = 고객데이터 )
+<img src=https://user-images.githubusercontent.com/105832364/172328303-3b43121c-b70e-4c4a-a195-2cee778565f3.jpg width="855" height="400"/><br/>
   - NaN 제거
   - 학습을 위해 X , y지정
   - 피처스케일링(scikit-learn MinMaxScaler 사용)
