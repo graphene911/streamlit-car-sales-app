@@ -4,7 +4,7 @@ from app_home import run_home
 from app_serch import run_serch
 from app_ml import run_ml
 from app_upload import run_upload
-from PIL import Image
+
 
 
 

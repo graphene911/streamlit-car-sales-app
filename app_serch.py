@@ -1,4 +1,3 @@
-from operator import contains
 import streamlit as st
 import pandas as pd
 from PIL import Image

@@ -1,5 +1,5 @@
+from turtle import width
 import streamlit as st
-import numpy as np
 import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as plt
@@ -74,7 +74,12 @@ def run_eda() :
         
         st.text('선택하신 컬럼끼리의 상관계수입니다.')
         st.dataframe(df[selected_list].corr())
-    
+
+        st.subheader('각 연료별 차량의 대수')
+        
+        fig6 = plt.figure(figsize=(8,6))
+        sb.countplot(data=df, x='연료')
+        st.pyplot(fig6)
 
     elif eda_list == '고객 데이터':
         st.title('고객 데이터 EDA')
