@@ -61,6 +61,8 @@
 ![pandas Badge](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![scikit-learn Badge](https://img.shields.io/badge/scikit-learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![Streamlit Badge](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=Streamlit&logoColor=white)
+![matplotlib.pyplot Badge](https://img.shields.io/badge/matplotlib.pyplot-F7931E?style=flat&logo=matplotlib.pyplot&logoColor=white)
+![Seaborn Badge](https://img.shields.io/badge/Seaborn-232F3E?style=flat&logo=Seaborn&logoColor=white)
 <br/>
 ### Tool
 ![Anaconda Badge](https://img.shields.io/badge/Anaconda-44A833?style=flat&logo=Anaconda&logoColor=white)
