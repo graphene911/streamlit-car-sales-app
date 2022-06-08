@@ -19,7 +19,7 @@ def run_serch() :
     serch_type = ['모델','타입']
     serch_type_df = st.sidebar.selectbox('모델/타입 선택',serch_type)
     
-
+    #### 브랜드별 이미지 ####
     if choice == df1[0] :
         img0 = Image.open('data/logo/000.jpg')
         st.image(img0)
@@ -186,6 +186,7 @@ def run_serch() :
         img54 = Image.open('data/logo/054.jpg')
         st.image(img54)
 
+    #### 모델별 타입별 selectbox ####
     if serch_type_df == serch_type[0] :
         df2 = df.groupby('제조사명').get_group(choice)
         df2_list = sorted(df2['모델'].unique())
@@ -200,10 +201,6 @@ def run_serch() :
         st.subheader('타입별 보기')
         st.dataframe( df3.loc[ df3['타입'] == choice3 ].sort_values( '가격(\)', ascending=False ) )
 
-    # st.subheader('모델별 보기')
-    # st.dataframe( df2.loc[ df2['모델'] == choice2 ].sort_values( '가격(\)', ascending=False ) )
-
-    # st.subheader('타입별 보기')
-    # st.dataframe( df2.loc[ df2['타입'] == choice3 ].sort_values( '가격(\)', ascending=False ) )
+    
        
     
