@@ -83,6 +83,7 @@
 ## Reference
   - 차량 데이터 : https://www.kaggle.com/datasets/sivaakhilnukala/used-cars-price
   - 고객 데이터 : https://www.kaggle.com/code/martandsay/car-purchase-amount-prediction-neural-network/notebook
+  - 메인화면 동영상 : https://www.youtube.com/watch?v=UZs758DjFgI&t=1s
 <br/>
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:00dbde,100:fc00ff&height=100&section=footer)
