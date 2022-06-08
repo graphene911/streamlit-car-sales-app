@@ -32,7 +32,7 @@ def run_upload() :
         df = pd.read_csv('data/car_price_sales.csv', index_col=0)
         st.title('입고 차량 등록')
         
-            
+        
         brand_type = sorted(list(df['제조사명'].unique()))
         brand_text = st.selectbox('제조사', brand_type)
         model_text = st.text_input('모델')
