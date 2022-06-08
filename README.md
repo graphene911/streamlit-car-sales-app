@@ -85,4 +85,4 @@
   - 고객 데이터 : https://www.kaggle.com/code/martandsay/car-purchase-amount-prediction-neural-network/notebook
 <br/>
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:fc00ff,100:00dbde&height=100&section=footer)
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:00dbde,100:fc00ff&height=100&section=footer)
