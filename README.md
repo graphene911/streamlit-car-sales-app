@@ -70,8 +70,9 @@
   - 학습을 위해 X , y지정
   - 피처스케일링(scikit-learn MinMaxScaler 사용)
   - 학습을 위해, y 의 shape 을 변경 후 피처스케일링(scikit-learn MinMaxScaler 사용)
-  - 트레이닝셋과 테스트셋으로 분리 (from sklearn.model_selection import train_test_split)
-  - 리니어 리그레션으로 모델링하고 학습한 후 평가
+  - training set과 test set으로 분리 (from sklearn.model_selection import train_test_split)
+  - Linear Regression으로 모델링하고 학습 및 평가<br/>
+![image](https://user-images.githubusercontent.com/105832364/174471370-e90531ba-f2e5-4d40-bfc7-bb44369fd487.png)
 <br/>
 
 ## URL
